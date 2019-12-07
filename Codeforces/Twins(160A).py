@@ -1,5 +1,7 @@
 n = int(input())
-coins = sorted([int(x) for x in input().split()],reverse=True)
-print(coins)
-sum1 = 0
-sum2 = 0
+coins = sorted([int(x) for x in input().split()])
+sum1 = count = 0
+while(sum1 <= sum(coins)):
+    sum1 += coins.pop()
+    count += 1
+print(count)
