@@ -1,7 +1,10 @@
-n = int(input())
-magnets = [input() for i in range(n)]
-grps = 1
-for i in range(1,n):
-    if magnets[i-1] != magnets[i]:
-        grps += 1
-print(grps)
+from sys import stdin
+n = int(stdin.readline())
+a = int(stdin.readline())
+ans = 1
+for i in range(n-1):
+    b = int(stdin.readline())
+    if a != b:
+        ans += 1
+    a = b
+print(ans)
