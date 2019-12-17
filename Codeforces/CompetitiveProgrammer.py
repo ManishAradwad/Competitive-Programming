@@ -1,17 +1,15 @@
-from itertools import permutations
-import math
 from sys import stdin
 n = int(stdin.readline())
 for i in range(n):
-    inp = int(stdin.readline())
-    if inp == 0:
+    number = stdin.readline()
+    digits = []
+    for digit in number:
+        if digit != "\n":
+            digits.append(int(digit))
+    even = 0
+    for i in digits:
+        if i % 2 == 0:
+            even += 1
+    if sum(digits) % 3 == 0 and digits.count(0) >= 1 and even >= 2:
         print("red")
-    else:
-        permList = permutations(str(inp))
-        for perm in list(permList):
-            if int("".join(perm)) % 60 == 0:
-                print("red")
-                break
-            else:
-                print("cyan")
-                
+    else: print("cyan")
