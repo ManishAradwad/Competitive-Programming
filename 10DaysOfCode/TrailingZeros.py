@@ -1,8 +1,9 @@
-import math
+def trailingzeros(x):
+    ans = 0
+    power = 5
+    while(x//power > 0):
+        ans += x//power
+        power *= 5
+    return ans
 n = int(input())
-fact = math.factorial(n)
-ans = 0
-while(fact % 10 == 0):
-    ans += 1
-    fact = fact//10
-print(ans)
+print(trailingzeros(n))
